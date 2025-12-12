@@ -8,6 +8,7 @@ import Animated, {
   runOnJS,
   Easing,
 } from "react-native-reanimated";
+import { colors } from "../theme/colors";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 const SHEET_HEIGHT = SCREEN_HEIGHT * 0.8;
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     height: SHEET_HEIGHT,
     width: "100%",
     padding: 20,
-    backgroundColor: "#EFF6FF",
+    backgroundColor: colors.background,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },

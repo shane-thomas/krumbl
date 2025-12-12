@@ -10,7 +10,8 @@ SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const [loaded, error] = useFonts({
-    "Futura-Bold": require("../../assets/fonts/Futura/Futura Bold/Futura Bold.otf"),
+    "Futura-Bold": require("@/assets/fonts/Futura/Futura Bold/Futura Bold.otf"),
+    Futura: require("@/assets/fonts/Futura/Futura Regular/Futura Regular.ttf"),
   });
 
   useEffect(() => {

@@ -6,17 +6,18 @@ import {
   Landmark,
   Settings,
 } from "lucide-react-native";
+import { colors } from "@/src/theme/colors";
 
 export default function TabLayout() {
   const router = useRouter();
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#0060AC",
+        tabBarActiveTintColor: colors.primary,
         tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#EFF6FF",
+          backgroundColor: colors.background,
           height: 100,
           borderTopWidth: 0,
           paddingVertical: 0,

@@ -1,4 +1,5 @@
 import { Text, StyleSheet } from "react-native";
+import { colors } from "@/src/theme/colors";
 
 type KHeaderProps = {
   headerText: string;
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
     fontFamily: "Futura-Bold",
     fontSize: 30,
     textAlign: "left",
-    color: "#0060AC",
+    color: colors.primary,
     width: "100%",
   },
 });

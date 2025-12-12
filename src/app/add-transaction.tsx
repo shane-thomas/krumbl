@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Pressable, TextInput } from "react-native";
 import BottomSheet from "../components/BottomSheet";
 import { Banknote, ChevronDown, Delete } from "lucide-react-native";
 import { useState } from "react";
+import { colors } from "../theme/colors";
 
 export default function AddTransaction() {
   const router = useRouter();
@@ -72,7 +73,7 @@ export default function AddTransaction() {
             style={[styles.button, styles.operatorButton]}
             onPress={() => {}}
           >
-            <Text style={styles.operatorText}>×</Text>
+            <Text style={styles.operatorText}>x</Text>
           </Pressable>
         </View>
 
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 30,
-    backgroundColor: "#f5f5f5", // Light grey instead of border
+    backgroundColor: "#f5f5f5",
     justifyContent: "center",
     alignItems: "center",
     gap: 8,
@@ -207,7 +208,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#e0e0e0",
   },
   accentButton: {
-    backgroundColor: "#007AFF",
+    backgroundColor: colors.primary,
   },
   numberText: {
     fontSize: 28,
