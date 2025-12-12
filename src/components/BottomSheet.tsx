@@ -10,7 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
-const SHEET_HEIGHT = SCREEN_HEIGHT * 0.85;
+const SHEET_HEIGHT = SCREEN_HEIGHT * 0.8;
 
 type BottomSheetProps = {
   children?: React.ReactNode;
@@ -95,7 +95,7 @@ const BottomSheet = ({ children, onClose }: BottomSheetProps) => {
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    justifyContent: "flex-end", // Force sheet to bottom
+    justifyContent: "flex-end",
     backgroundColor: "transparent",
   },
   backdrop: {
@@ -105,10 +105,10 @@ const styles = StyleSheet.create({
   sheet: {
     height: SHEET_HEIGHT,
     width: "100%",
-    backgroundColor: "white",
+    padding: 20,
+    backgroundColor: "#EFF6FF",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    // No 'position: absolute' needed here because of flex-end in overlay
   },
   handle: {
     width: 50,

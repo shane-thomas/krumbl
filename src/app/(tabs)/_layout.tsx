@@ -36,7 +36,7 @@ export default function TabLayout() {
           fontSize: 12,
           fontWeight: "700",
           marginTop: 0,
-          paddingBottom: 15, // Label'ı aşağıya itmek için
+          paddingBottom: 15,
         },
       }}
     >
