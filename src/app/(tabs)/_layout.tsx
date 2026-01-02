@@ -18,10 +18,8 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: colors.background,
-          height: 100,
-          borderTopWidth: 0,
+          borderTopWidth: 1,
           paddingVertical: 0,
-          // shadowColor: "transparent",
         },
         tabBarItemStyle: {
           height: "100%",

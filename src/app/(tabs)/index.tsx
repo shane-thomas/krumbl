@@ -105,23 +105,36 @@ export default function Index() {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: colors.background, padding: 20 }}
+      style={{
+        flex: 1,
+        backgroundColor: colors.background,
+        paddingHorizontal: 20,
+      }}
+      edges={["top"]}
     >
-      <KHeader headerText="plan" />
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <View style={{ flexDirection: "row" }}>
-          <Text style={styles.header}>{currentMonth}</Text>
-          <ChevronDown color={colors.primary} />
-        </View>
-        <View style={{ flexDirection: "row" }}>
-          <Text style={styles.header}>Edit </Text>
-          <Edit color={colors.primary} />
-        </View>
-      </View>
-
       <SectionList
         sections={mockCategoryGroups}
         keyExtractor={(item) => item.id}
+        ListHeaderComponent={
+          <>
+            <KHeader headerText="plan" />
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.header}>{currentMonth}</Text>
+                <ChevronDown color={colors.primary} />
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.header}>Edit </Text>
+                <Edit color={colors.primary} />
+              </View>
+            </View>
+          </>
+        }
         renderItem={({ item }) => (
           <CategorySmall
             assigned={item.assigned}
