@@ -16,5 +16,6 @@ const styles = StyleSheet.create({
     textAlign: "left",
     color: colors.primary,
     width: "100%",
+    marginBottom: 20,
   },
 });

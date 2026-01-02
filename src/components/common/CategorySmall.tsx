@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text } from "react-native";
 import { colors } from "@/src/theme/colors";
+import { ChevronRight } from "lucide-react-native";
 
 type CategorySmallProps = {
   title: string;
@@ -16,16 +17,41 @@ export default function CategorySmall({
 }: CategorySmallProps) {
   const assignedPercent = target > 0 ? (assigned / target) * 100 : 0;
   const spentPercent = target > 0 ? (spent / target) * 100 : 0;
+  const overspent = spent > assigned;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>{title}</Text>
+      <View
+        style={{
+          flexDirection: "row",
+          width: "100%",
+          justifyContent: "space-between",
+          paddingRight: 20,
+        }}
+      >
+        <Text style={styles.header}>{title}</Text>
+        <ChevronRight color={colors.primary} />
+      </View>
       <View style={styles.box}>
-        <View style={styles.targetLine}></View>
+        <View style={styles.targetLine} />
         <View
-          style={[styles.assignedLine, { width: `${assignedPercent}%` }]}
-        ></View>
-        <View style={[styles.spentLine, { width: `${spentPercent}%` }]}></View>
+          style={[
+            styles.assignedLine,
+            {
+              width: `${assignedPercent}%`,
+              backgroundColor: overspent ? "red" : "green",
+            },
+          ]}
+        />
+        <View
+          style={[
+            styles.spentLine,
+            {
+              width: `${spentPercent}%`,
+              backgroundColor: overspent ? "transparent" : "white",
+            },
+          ]}
+        />
       </View>
     </View>
   );
@@ -39,12 +65,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderColor: colors.primary,
-    borderWidth: 1,
-    backgroundColor: "white",
+    borderWidth: 2,
+    backgroundColor: colors.background,
     marginBottom: 5,
   },
   header: {
-    fontFamily: "Futura-Bold",
+    fontFamily: "Futura",
     fontSize: 16,
     textAlign: "left",
     color: colors.primary,
@@ -64,8 +90,8 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     zIndex: 1,
-    borderColor: "black",
-    borderWidth: 1,
+    borderWidth: 0.2,
+    borderColor: "grey",
   },
   assignedLine: {
     position: "absolute",
@@ -75,18 +101,15 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     zIndex: 2,
-    borderColor: "black",
-    borderWidth: 1,
   },
   spentLine: {
     position: "absolute",
-    backgroundColor: "red",
+    backgroundColor: "white",
+    opacity: 0.3,
     height: 6,
     borderRadius: 10,
     top: 0,
     left: 0,
     zIndex: 3,
-    borderColor: "black",
-    borderWidth: 1,
   },
 });
