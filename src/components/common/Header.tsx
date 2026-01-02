@@ -12,7 +12,7 @@ export default function KHeader({ headerText }: KHeaderProps) {
 const styles = StyleSheet.create({
   header: {
     fontFamily: "Futura-Bold",
-    fontSize: 30,
+    fontSize: 24,
     textAlign: "left",
     color: colors.primary,
     width: "100%",
